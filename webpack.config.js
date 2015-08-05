@@ -1,10 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var EXTERNAL_URL = process.env.EXTERNAL_URL || 'http://localhost:3000';
+
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?' + EXTERNAL_URL,
     'webpack/hot/only-dev-server',
     './src/index'
   ],
